@@ -18,8 +18,9 @@ module.exports = {
         main: './scripts/main.js'
     },
     output: {
-        path: __dirname + '/build/scripts',
-        filename: '[name].js'
+        path: __dirname + '/build',
+        publicPath: '../',
+        filename: 'scripts/[name].js'
     },
     resolve: {
         root: __dirname + '/bower_components'
@@ -37,10 +38,16 @@ module.exports = {
         },{
             test: /\.less$/,
             loader: ExtractTextPlugin.extract('css-loader!postcss-loader!less-loader')
+        },{
+            test: /\.(png|jpg|jpeg|gif|svg)$/,
+            loader:'file-loader?name=[path][name].[ext]'
+        },{
+            test: /\.(ttf|eot|woff|woff2)$/,
+            loader:'file-loader?name=[path][name].[ext]'
         }]
     },
     plugins: [
-        new ExtractTextPlugin('../styles/[name].css', { allChunks: true })
+        new ExtractTextPlugin('styles/[name].css', { allChunks: true })
     ],
     postcss: [ 
         autoprefixer({ browsers: ['last 2 versions'] }) 

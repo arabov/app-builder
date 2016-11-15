@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "",
+  "authors": [],
+  "license": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

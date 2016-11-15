@@ -5,6 +5,7 @@
 ```bash
 git clone https://github.com/arabov/frontend-builder.git
 npm install
+bower install
 ```
 
 ## Run

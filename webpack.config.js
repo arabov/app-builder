@@ -36,14 +36,29 @@ module.exports = {
                 presets: ['es2015']
             }
         },{
+            test: /\.json$/,
+            loader: 'json-loader'
+        },{
             test: /\.less$/,
             loader: ExtractTextPlugin.extract('css-loader!postcss-loader!less-loader')
         },{
             test: /\.(png|jpg|jpeg|gif|svg)$/,
-            loader:'file-loader?name=[path][name].[ext]'
+            loader:'file-loader',
+            query: {
+                name: '[path][name].[ext]'
+            }
         },{
             test: /\.(ttf|eot|woff|woff2)$/,
-            loader:'file-loader?name=[path][name].[ext]'
+            loader:'file-loader',
+            query: {
+                name: '[path][name].[ext]'
+            }
+        },{
+            test: /\.html$/,
+            loader:'file-loader',
+            query: {
+                name: '[path][name].[ext]'
+            }
         }]
     },
     plugins: [
